@@ -6,11 +6,12 @@ Credit goes to Lionel Baboud for the visual assets.
 # Game
 Bomberman is a 2D multiplayer game. Each player controls an avatar able to move fast and put bombs. The bombs can destroy the environment, the bonuses or kill the opponent. What you want is to kill your adversary before he does.
 
-![alt text](screenshots/screen_1.png "Example of a game")
+![alt text](screenshots/screen_2.png "Screenshot of a game")
 
 
 # Compilation
-A Makefile is placed add the root of the repository. This Makefile expects SFML to be installed on the machine (typically, package libsfml-dev).
+The game was developped using C++ (c++11) and SFML 2.3. Tested in Linux and Windows.
+For compiling and running the game a Makefile is placed at the root of the repository. This Makefile expects SFML to be installed on the machine (typically, package libsfml-dev).
 
 
 # Custom maps
