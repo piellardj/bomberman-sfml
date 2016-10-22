@@ -1,5 +1,7 @@
+SFML_PATH=extlibs/SFML-2.3.2/
+
 CC=g++
-CFLAGS=-Wall -Wextra -pedantic -O2 -Iinclude -std=c++11
+CFLAGS=-Wall -Wextra -pedantic -O2 -Iinclude -I$(GLM_PATH) -I$(SFML_PATH)/include -L$(SFML_PATH)/lib -std=c++11
 tCFILES=$(wildcard src/*.cpp)
 CFILES=$(tCFILES:src/%=%)
 OFILES=$(CFILES:%.cpp=obj/%.o)
@@ -28,13 +30,13 @@ obj/%.o: src/%.cpp
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
-	rm -f obj/*
+	rm -rf obj/*
 
 cleanall:
-	rm -f obj/* bin/$(EXEC)
+	rm -rf obj/* bin/$(EXEC)
 
 run: bin/$(EXEC)
-	bin/$(EXEC)
+	export LD_LIBRARY_PATH=extlibs/SFML-2.3.2/lib ; bin/$(EXEC)
 
 run_gdb: bin/$(EXEC)
 	gdb bin/$(EXEC)
